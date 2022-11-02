@@ -15,6 +15,7 @@ megaRestaurant.open();
 
 
 megaRestaurant.reserveTable();
+megaRestaurant.cancelTableReservation();
 
 
 megaRestaurant.close();

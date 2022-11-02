@@ -14,4 +14,8 @@ class Restaurant extends EventEmitter {
     reserveTable() {
         this.emit('tableCountUpdate', -1);
     }
+    // Odwołano rezerwcję na stolik
+    cancelTableReservation() {
+        this.emit('tableCountUpdate', 1);
+    }
 }
