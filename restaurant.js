@@ -10,4 +10,8 @@ class Restaurant extends EventEmitter {
     close() {
         this.emit('close');
     }
+    // Stolik został zarezerwowany na teraz
+    reserveTable() {
+        this.emit('tableCountUpdate', -1);
+    }
 }
