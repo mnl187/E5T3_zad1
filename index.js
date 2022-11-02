@@ -12,10 +12,13 @@ megaRestaurant
     });
 
 megaRestaurant.open();
-
-
+megaRestaurant.takeTableWithoutReservation();
+megaRestaurant.takeTableWithoutReservation();
 megaRestaurant.reserveTable();
 megaRestaurant.cancelTableReservation();
-
+megaRestaurant.reserveTable();
+megaRestaurant.reserveTable();
+megaRestaurant.takeTableWithoutReservation();
+megaRestaurant.takeTableWithoutReservation();
 
 megaRestaurant.close();

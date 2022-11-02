@@ -18,4 +18,8 @@ class Restaurant extends EventEmitter {
     cancelTableReservation() {
         this.emit('tableCountUpdate', 1);
     }
+    // Wzięto stolik bez rezerwacji
+    takeTableWithoutReservation() {
+        this.emit('tableCountUpdate', -1);
+    }
 }
