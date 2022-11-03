@@ -1,6 +1,6 @@
-const { EventEmitter }= require('events');
+import {EventEmitter} from "events";
 
-class Restaurant extends EventEmitter {
+export class Restaurant extends EventEmitter {
     // Otwarcie restauracji
     
     open() {
