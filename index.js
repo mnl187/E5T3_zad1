@@ -20,5 +20,6 @@ megaRestaurant.reserveTable();
 megaRestaurant.reserveTable();
 megaRestaurant.takeTableWithoutReservation();
 megaRestaurant.takeTableWithoutReservation();
+megaRestaurant.cleanupTable();
 
 megaRestaurant.close();

@@ -22,4 +22,8 @@ class Restaurant extends EventEmitter {
     takeTableWithoutReservation() {
         this.emit('tableCountUpdate', -1);
     }
+    // Stolik po wyczyszczeniui wraca do użytku
+    cleanupTable() {
+        this.emit('tableCountUpdate', 1);
+    }
 }
