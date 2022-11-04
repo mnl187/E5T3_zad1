@@ -5,11 +5,11 @@ export class Restaurant extends EventEmitter {
     // Otwarcie restauracji
     
     open() {
-        this.emit(RestaurantEventName.Open);
+        (this.emit as RestaurantEvent)(RestaurantEventName.Open);
     }
     // Zamknięcie restauracji
     close() {
-        this.emit(RestaurantEventName.Close);
+        (this.emit as RestaurantEvent)(RestaurantEventName.Close);
     }
     // Stolik został zarezerwowany na teraz
     reserveTable() {
@@ -28,3 +28,6 @@ export class Restaurant extends EventEmitter {
         this.emit(RestaurantEventName.TableCountUpdate, 1);
     }
 }
+
+export type RestaurantEvent = (eventName: RestaurantEventName) => boolean;
+
