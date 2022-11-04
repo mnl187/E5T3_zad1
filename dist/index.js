@@ -5,10 +5,10 @@ let tablesCount = 25;
 megaRestaurant
     .on(RestaurantEventName.Open, () => console.log('Otwarto restaurację.'))
     .on(RestaurantEventName.Close, () => console.log('Zamknieto restaurację.'))
-    .on(RestaurantEventName.TableCountUpdate, change => {
+    .on(RestaurantEventName.TableCountUpdate, (change => {
     tablesCount += change;
     console.log(`Dostępnych stolików ${tablesCount}.`);
-});
+}));
 megaRestaurant.open();
 megaRestaurant.takeTableWithoutReservation();
 megaRestaurant.takeTableWithoutReservation();

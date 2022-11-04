@@ -36,4 +36,4 @@ export class Restaurant extends EventEmitter {
 
 export type RestaurantEvent = (eventName: RestaurantEventName) => boolean;
 export type RestaurantTableCountChangeEvent = (eventName: RestaurantEventName.TableCountUpdate, incDec: number) => boolean;
-
+export type RestaurantTableCountChangeCallback = (incDec: number) => void;
