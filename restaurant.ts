@@ -13,21 +13,22 @@ export class Restaurant extends EventEmitter {
     }
     // Stolik został zarezerwowany na teraz
     reserveTable() {
-        this.emit(RestaurantEventName.TableCountUpdate, -1);
+        (this.emit as RestaurantTableCountChangeEvent)(RestaurantEventName.TableCountUpdate, -1);
     }
     // Odwołano rezerwcję na stolik
     cancelTableReservation() {
-        this.emit(RestaurantEventName.TableCountUpdate, 1);
+        (this.emit as RestaurantTableCountChangeEvent)(RestaurantEventName.TableCountUpdate, 1);
     }
     // Wzięto stolik bez rezerwacji
     takeTableWithoutReservation() {
-        this.emit(RestaurantEventName.TableCountUpdate, -1);
+        (this.emit as RestaurantTableCountChangeEvent)(RestaurantEventName.TableCountUpdate, -1);
     }
     // Stolik po wyczyszczeniui wraca do użytku
     cleanupTable() {
-        this.emit(RestaurantEventName.TableCountUpdate, 1);
+        (this.emit as RestaurantTableCountChangeEvent)(RestaurantEventName.TableCountUpdate, 1);
     }
 }
 
 export type RestaurantEvent = (eventName: RestaurantEventName) => boolean;
+export type RestaurantTableCountChangeEvent = (eventName: RestaurantEventName.TableCountUpdate, incDec: number) => boolean;
 
